@@ -1,18 +1,19 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.servlets;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.servlets;
 
 import java.io.IOException;
 import java.time.LocalDate;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.Gender;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.User;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.users.UsersWriter;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.Gender;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.User;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.dao.UserDao;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.utils.DataSourceSearcher;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.utils.PasswordEncoder;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/userRegister")
 public class UserRegisterServlet extends HttpServlet{
@@ -36,14 +37,17 @@ public class UserRegisterServlet extends HttpServlet{
 		User user = new User();
 		user.setName(name);
 		user.setEmail(email);
-		user.setPassword(password);
+		user.setPassword(PasswordEncoder.encode(password));
 		user.setDateOfBirth(LocalDate.parse(dateOfBirth));
 		user.setGender(Gender.valueOf(gender));
 		
 		RequestDispatcher dispatcher = null;
+		UserDao ud = new UserDao(DataSourceSearcher.getInstance().getDataSource());
+		
+		
 		
 		// salvar o novo usuário
-		if(UsersWriter.write(user)) {
+		if(ud.save(user)) {
 			req.setAttribute("result", "registered");
 			dispatcher = req.getRequestDispatcher("/login.jsp");
 		}else {

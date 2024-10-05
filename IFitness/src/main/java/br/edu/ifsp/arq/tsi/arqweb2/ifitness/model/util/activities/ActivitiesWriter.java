@@ -1,4 +1,4 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.activities;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.activities;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,8 +9,8 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.Activity;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.LocalDateTypeAdapter;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.Activity;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.LocalDateTypeAdapter;
 
 public class ActivitiesWriter {
 
@@ -20,7 +20,7 @@ public class ActivitiesWriter {
 						new LocalDateTypeAdapter())
 				.create();
 		List<Activity> activities = ActivitiesReader.read();
-		String path = "/media/Documentos/Fernando/ARQWEB1/WorkspaceEclipse/activities.json";
+		String path = "/home/aluno/Documentos/Giovani/ARQWEB-2/IFitness/activities.json";
 		
 		if(activities == null) {
 			// quando não tem nenhum objeto cadastrado
@@ -55,7 +55,7 @@ public class ActivitiesWriter {
 						new LocalDateTypeAdapter())
 				.create();
 		List<Activity> activities = ActivitiesReader.read();
-		String path = "/media/Documentos/Fernando/ARQWEB1/WorkspaceEclipse/activities.json";
+		String path = "/home/aluno/Documentos/Giovani/ARQWEB-2/IFitness/activities.json";
 		
 		int index = 0;
 		for(Activity a: activities) {
@@ -86,7 +86,7 @@ public class ActivitiesWriter {
 						new LocalDateTypeAdapter())
 				.create();
 		List<Activity> activities = ActivitiesReader.read();
-		String path = "/media/Documentos/Fernando/ARQWEB1/WorkspaceEclipse/activities.json";
+		String path = "/home/aluno/Documentos/Giovani/ARQWEB-2/IFitness/activities.json";
 		
 		activities.remove(activity);
 		

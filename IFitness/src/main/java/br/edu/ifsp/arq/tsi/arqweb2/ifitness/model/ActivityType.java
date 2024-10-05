@@ -1,4 +1,4 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.model;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.model;
 
 public enum ActivityType {
 

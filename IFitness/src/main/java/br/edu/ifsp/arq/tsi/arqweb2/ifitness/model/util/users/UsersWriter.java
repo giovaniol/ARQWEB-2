@@ -1,4 +1,4 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.users;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.users;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,8 +9,9 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.User;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.LocalDateTypeAdapter;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.User;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.LocalDateTypeAdapter;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.utils.PasswordEncoder;
 
 public class UsersWriter {
 
@@ -20,7 +21,7 @@ public class UsersWriter {
 						new LocalDateTypeAdapter())
 				.create();
 		List<User> users = UsersReader.read();
-		String path = "/media/Documentos/Fernando/ARQWEB1/WorkspaceEclipse/users.json";
+		String path = "/home/aluno/Documentos/Giovani/ARQWEB-2/IFitness/users.json";
 		
 		if(users == null) {
 			// quando não tem nenhum objeto cadastrado

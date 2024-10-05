@@ -1,4 +1,4 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.users;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.users;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,8 +11,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.User;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.LocalDateTypeAdapter;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.User;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.LocalDateTypeAdapter;
 
 public class UsersReader {
 
@@ -22,7 +22,7 @@ public class UsersReader {
 						new LocalDateTypeAdapter())
 				.create();
 		List<User> users = null;
-		String path = "/media/Documentos/Fernando/ARQWEB1/WorkspaceEclipse/users.json";
+		String path = "/home/aluno/Documentos/Giovani/ARQWEB-2/IFitness/users.json";
 		try {
 			File file = new File(path);
 			if(file.exists()) {

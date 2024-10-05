@@ -1,8 +1,9 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.users;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.users;
 
 import java.util.List;
 
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.User;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.User;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.utils.PasswordEncoder;
 
 public class UserLogin {
 	

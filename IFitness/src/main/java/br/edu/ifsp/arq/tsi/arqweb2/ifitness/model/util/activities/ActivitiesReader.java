@@ -1,4 +1,4 @@
-package br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.activities;
+package br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.activities;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,10 +14,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.Activity;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.User;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.dto.ActivityByType;
-import br.edu.ifsp.arq.tsi.arqweb1.ifitness.model.util.LocalDateTypeAdapter;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.Activity;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.User;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.dto.ActivityByType;
+import br.edu.ifsp.arq.tsi.arqweb2.ifitness.model.util.LocalDateTypeAdapter;
 
 public class ActivitiesReader {
 
@@ -27,7 +27,7 @@ public class ActivitiesReader {
 						new LocalDateTypeAdapter())
 				.create();
 		List<Activity> activities = null;
-		String path = "/media/Documentos/Fernando/ARQWEB1/WorkspaceEclipse/activities.json";
+		String path = "/home/aluno/Documentos/Giovani/ARQWEB-2/IFitness/activities.json";
 		
 		try {
 			File file = new File(path);
